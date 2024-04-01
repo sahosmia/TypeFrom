@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: "Apercu Pro";
+  src: url("https://db.onlinewebfonts.com/t/0406c39d71726a4efe1134bf8e3feb71.eot");
+  src: url("https://db.onlinewebfonts.com/t/0406c39d71726a4efe1134bf8e3feb71.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/0406c39d71726a4efe1134bf8e3feb71.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/0406c39d71726a4efe1134bf8e3feb71.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/0406c39d71726a4efe1134bf8e3feb71.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/0406c39d71726a4efe1134bf8e3feb71.svg#Apercu Pro")format("svg");
+}
+body {
+  background-color: #191919;
+  color: rgb(25, 25, 25);
+  font-family: "Apercu Pro", sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
+  margin: 0px;
+  min-height: 100%;
+  padding: 0px;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+
+
+.error {
+  line-height: 1.5;
+  position: relative;
+}
+.error::before {
+  content: "";
+  background: url("/src/assets/warning.svg") 50% center repeat;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  left: 0px;
+  top: 8px;
+}
+
+.inset-shadow {
+  box-shadow: rgb(207, 207, 206) 0px 0px 0px 1px inset;
+}
+
+.inset-shadow:focus {
+  box-shadow: rgb(255, 255, 255) 0px 0px 0px 1px, rgba(38, 38, 39, 0.4) 0px 0px 0px 3px;
+}
+
+
+.inset-shadow:checked::before {
+  content: "";
+  color: rgb(255, 255, 255);
+  background: url("/src/assets/check-white.svg") 50% 4px no-repeat;
+  left: 0px;
+  top: 0px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+}
+
+.toggle-element {
+  transition: max-height 0.5s ease-in-out;
+}
+
+.toggle-element.open {
+  max-height: 800px;
+}
+
+.toggle-element.closed {
+  max-height: 0;
+}
+
